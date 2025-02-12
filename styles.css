@@ -1,0 +1,100 @@
+#logo {
+    display: block;
+    margin: auto;
+    animation: bounce 2s infinite;
+}
+
+#loader {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+    display: none; /* Initially hidden */
+}
+
+#rollingEgg {
+    width: 50px;
+    animation: roll 3s linear forwards;
+}
+
+#boilingWater {
+    font-size: 40px;
+    margin-top: 10px;
+}
+#timerDisplay {
+    font-size: 48px;  /* Bigger text */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    animation: pulse 1s infinite alternate; /* Pulsating animation */
+}
+
+/* Colors based on the type of egg */
+.soft { color: yellow; }
+.medium { color: orange; }
+.hard { color: red; }
+
+/* Centering the buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Styling buttons */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Color styles for buttons */
+button:nth-child(1) { background-color: yellow; }
+button:nth-child(2) { background-color: orange; }
+button:nth-child(3) { background-color: red; }
+
+/* Centering & Animating the Message */
+#message {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block; /* Initially hidden */
+    animation: messagePulse 2s infinite;
+}
+
+.show-message {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+
+@keyframes roll {
+    0% { transform: translateX(-100px) rotate(0deg); }
+    100% { transform: translateX(100px) rotate(360deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes messagePulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}

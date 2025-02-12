@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>SBDF's Egg Cooking Timer</h1>
+    <img id="logo" src="icon.png" alt="Egg Timer Logo" width="100">
+
+    <div id="loader" class="hidden">
+        <img src="icon.png" alt="Rolling Egg" id="rollingEgg">
+        <div id="boilingWater">♨️♨️♨️</div>
+    </div>
+
+    <div class="button-container">
+        <button onclick="startTimer('soft')">Soft Boiled</button>
+        <button onclick="startTimer('medium')">Medium Boiled</button>
+        <button onclick="startTimer('hard')">Hard Boiled</button>
+    </div>
+
+    <div id="message"></div>
+    <div id="timerDisplay">0:00</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
