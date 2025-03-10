@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egg Timer</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egg Timer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>SBDF's Egg Cooking Timer</h1>
-    <img id="logo" src="icon.png" alt="Egg Timer Logo" width="100">
+  <h1>SBDF's Egg Cooking Timer</h1>
+  <img id="logo" src="icon.png" alt="Egg Timer Logo" width="100">
 
-    <div id="loader" class="hidden">
-        <img src="icon.png" alt="Rolling Egg" id="rollingEgg">
-        <div id="boilingWater">♨️♨️♨️</div>
-    </div>
+  <div id="loader" class="hidden">
+      <img src="icon.png" alt="Rolling Egg" id="rollingEgg">
+      <div id="boilingWater">♨️♨️♨️</div>
+  </div>
 
-    <div class="button-container">
-        <button onclick="startTimer('soft')">Soft Boiled</button>
-        <button onclick="startTimer('medium')">Medium Boiled</button>
-        <button onclick="startTimer('hard')">Hard Boiled</button>
-    </div>
+  <div class="button-container">
+      <button onclick="startTimer('soft')">Soft Boiled</button>
+      <button onclick="startTimer('medium')">Medium Boiled</button>
+      <button onclick="startTimer('hard')">Hard Boiled</button>
+      <button onclick="startTimer('microwave')">Microwave</button>
+  </div>
 
-    <div id="message"></div>
-    <div id="timerDisplay">0:00</div>
+  <div id="message"></div>
+  <div id="timerDisplay">0:00</div>
+  
+  <!-- Dropdown for selecting the sound to play -->
+  <div class="sound-selection" style="text-align: center; margin-top: 20px;">
+      <label for="soundSelect">Choose a sound for when the egg is done: </label>
+      <select id="soundSelect">
+          <option value="goat.mp3">Goat</option>
+          <option value="cow.mp3">Cow</option>
+          <option value="funny.mp3">Ready</option>
+      </select>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Audio element for playing sound -->
+  <audio id="sound" preload="auto"></audio>
+  <!-- Stop sound button (initially hidden) -->
+  <div style="text-align: center; margin-top: 10px;">
+      <button id="stopSound" onclick="stopSound()" style="display:none;">Stop Sound</button>
+  </div>
+
+  <!-- Timer controls for pause/resume and stop -->
+  <div class="timer-controls" style="text-align: center; margin-top: 20px;">
+      <button id="pauseTimer" onclick="togglePauseTimer()">Pause Timer</button>
+      <button onclick="stopTimer()">Stop Timer</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

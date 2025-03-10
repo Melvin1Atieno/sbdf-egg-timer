@@ -1,14 +1,16 @@
+/* Logo styling with bounce animation */
 #logo {
     display: block;
     margin: auto;
     animation: bounce 2s infinite;
 }
 
+/* Loader styles */
 #loader {
     text-align: center;
     font-size: 24px;
     margin: 20px 0;
-    display: none; /* Initially hidden */
+    display: none;
 }
 
 #rollingEgg {
@@ -20,20 +22,23 @@
     font-size: 40px;
     margin-top: 10px;
 }
+
+/* Timer display styling */
 #timerDisplay {
-    font-size: 48px;  /* Bigger text */
+    font-size: 48px;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
-    animation: pulse 1s infinite alternate; /* Pulsating animation */
+    animation: pulse 1s infinite alternate;
 }
 
-/* Colors based on the type of egg */
+/* Color styles for each egg type */
 .soft { color: yellow; }
 .medium { color: orange; }
 .hard { color: red; }
+.microwave { color: purple; }
 
-/* Centering the buttons */
+/* Button container styling */
 .button-container {
     display: flex;
     justify-content: center;
@@ -41,7 +46,7 @@
     margin-top: 20px;
 }
 
-/* Styling buttons */
+/* General button styling */
 button {
     font-size: 18px;
     padding: 10px 20px;
@@ -55,33 +60,44 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Color styles for buttons */
-button:nth-child(1) { background-color: yellow; }
-button:nth-child(2) { background-color: orange; }
-button:nth-child(3) { background-color: red; }
+/* Specific button colors for egg type buttons */
+.button-container button:nth-child(1) { background-color: yellow; }
+.button-container button:nth-child(2) { background-color: orange; }
+.button-container button:nth-child(3) { background-color: red; }
+.button-container button:nth-child(4) { background-color: purple; }
 
-/* Centering & Animating the Message */
+/* Message display styling */
 #message {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
-    display: block; /* Initially hidden */
+    display: block;
     animation: messagePulse 2s infinite;
 }
 
-.show-message {
-    opacity: 1;
-    transform: translateY(0);
-    display: block;
+/* Timer control buttons styling */
+.timer-controls button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #888;
+    color: #fff;
+    transition: background-color 0.3s;
 }
 
+.timer-controls button:hover {
+    background-color: #555;
+}
 
+/* Animations */
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
     100% { transform: scale(1.2); opacity: 0.8; }
 }
-
 
 @keyframes roll {
     0% { transform: translateX(-100px) rotate(0deg); }
